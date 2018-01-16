@@ -1,0 +1,8 @@
+{
+    "job1": {
+	    "label": "master",
+	    "credentialId" : "b32f7570-096d-45bf-8503-b797f10515d1",
+		"path_of_batch_script" : "run.sh"
+	
+    }
+}
