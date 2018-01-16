@@ -1,21 +1,9 @@
 #!groovy
 
-import groovy.json.JsonSlurperClassic
-
-def configdetails
-
-node('master') {
-	checkout scm
-    def jobconfig = readFile("${workspace}/config.json")
-    configdetails = new JsonSlurperClassic().parseText(jobconfig)
-}
-
-node(configdetails["job1"]["label"]) {
-	stage ('checkout'){
-	    checkout scm
-	}
-    stage ('execute bash script'){
-	    bat(readFile(configdetails["job1"]["path_of_bash_script"]))
-        	
-	}
+node {
+    checkout scm
+    
+	stage('Build') {
+        echo 'Building the project'
+    }
 }
